@@ -5,6 +5,14 @@ generator client {
   provider = "prisma-client-js"
 }
 
+generator trpc {
+  provider                 = "prisma-trpc-generator"
+  withMiddleware           = false
+  withShield               = false
+  contextPath              = "../src/server/api/trpc.ts"
+  showModelNameInProcedure = false
+}
+
 datasource db {
   provider = "sqlite"
   // NOTE: When using postgresql, mysql or sqlserver, uncomment the @db.Text annotations in model Account below
